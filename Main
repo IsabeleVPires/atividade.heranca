@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        DesenhoRetangulo retSimples = new RetanguloSimples();
+        DesenhoRetangulo retArredondado = new RetanguloArredondado();
+        DesenhoRetangulo retDuplaLinha = new RetanguloDuplaLinha();
+        DesenhoRetangulo retAsciiArt = new RetanguloAsciiArt();
+
+        System.out.println("Retângulo Simples:");
+        retSimples.desenhar("Texto Simples");
+
+        System.out.println("\nRetângulo Arredondado:");
+        retArredondado.desenhar("Texto Arredondado");
+
+        System.out.println("\nRetângulo de Linhas Duplas:");
+        retDuplaLinha.desenhar("Texto Dupla Linha");
+
+        System.out.println("\nRetângulo ASCII Art:");
+        retAsciiArt.desenhar("Texto ASCII Art");
+    }
+}
