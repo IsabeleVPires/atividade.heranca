@@ -1,0 +1,3 @@
+public interface DesenhoRetangulo {
+    void desenhar(String texto);
+}
