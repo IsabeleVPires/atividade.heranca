@@ -1,0 +1,80 @@
+// Classe base Funcionario
+public class Funcionario {
+    private String nome;
+    private double valorHora;
+    private int horasTrabalhadas;
+
+    public Funcionario(String nome, double valorHora, int horasTrabalhadas) {
+        this.nome = nome;
+        this.valorHora = valorHora;
+        this.horasTrabalhadas = horasTrabalhadas;
+    }
+
+    public double calcularSalario() {
+        return valorHora * horasTrabalhadas;
+    }
+
+    // Getters e Setters
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getValorHora() {
+        return valorHora;
+    }
+
+    public void setValorHora(double valorHora) {
+        this.valorHora = valorHora;
+    }
+
+    public int getHorasTrabalhadas() {
+        return horasTrabalhadas;
+    }
+
+    public void setHorasTrabalhadas(int horasTrabalhadas) {
+        this.horasTrabalhadas = horasTrabalhadas;
+    }
+}
+
+// Classe derivada Lider
+public class Lider extends Funcionario {
+    public Lider(String nome, double valorHora, int horasTrabalhadas) {
+        super(nome, valorHora, horasTrabalhadas);
+    }
+
+    @Override
+    public double calcularSalario() {
+        double salarioBase = super.calcularSalario();
+        return salarioBase + (salarioBase * 0.02);
+    }
+}
+
+// Classe derivada Gerente
+public class Gerente extends Funcionario {
+    public Gerente(String nome, double valorHora, int horasTrabalhadas) {
+        super(nome, valorHora, horasTrabalhadas);
+    }
+
+    @Override
+    public double calcularSalario() {
+        double salarioBase = super.calcularSalario();
+        return salarioBase + (salarioBase * 0.05);
+    }
+}
+
+// Classe Principal para Teste
+public class Principal {
+    public static void main(String[] args) {
+        Funcionario f1 = new Funcionario("Carlos", 50, 160);
+        Lider l1 = new Lider("Ana", 70, 160);
+        Gerente g1 = new Gerente("Marcos", 90, 160);
+
+        System.out.println("Salário do Funcionário: " + f1.calcularSalario());
+        System.out.println("Salário do Líder: " + l1.calcularSalario());
+        System.out.println("Salário do Gerente: " + g1.calcularSalario());
+    }
+}
